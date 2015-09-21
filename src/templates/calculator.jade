@@ -1,0 +1,79 @@
+extends innerpages
+
+include elements/lipsum.jade
+
+block main
+	main
+		.calculator
+			.calculator__container
+				.calculator__title Расчет площади квартиры
+				form.calculator__body
+					.calc-item.calc-item--white.calc-item--small
+						.calc-item__label Средний текст
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(size="1")
+					.calc-item.calc-item--white.calc-item-small
+						.calc-item__label Текст
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Текст
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Радио:
+						.calc-item__radio
+							input(type="radio" id="one" name="radio-1")
+							label(for="one") Один
+							input(type="radio" id="two" name="radio-1")
+							label(for="two") Два
+							input(type="radio" id="three" name="radio-1")
+							label(for="three") Три
+							input(type="radio" id="four" name="radio-1")
+							label(for="four") Четыре
+					.calc-item.calc-item--white
+						.calc-item__select-container
+							select.calc-item__select.calc-item__select--white
+								option(value="" disabled selected).disabled Селект выберите вариант:
+								option(value="1") Вариант 1
+								option(value="2") Вариант 2
+								option(value="3") Вариант 3
+								option(value="6") Шла Саша по шоссе и сосала сушку
+					.calc-item.calc-item--white
+						.calc-item__select-container
+							select.calc-item__select.calc-item__select--white
+								option(value="" disabled selected).disabled Селект выберите вариант:
+								option(value="1") Вариант 1
+								option(value="2") Вариант 2
+								option(value="3") Вариант 3
+								option(value="4") Вариант 4
+								option(value="5") Вариант 5
+					.calc-item.calc-item--white
+						.calc-item__label Радио:
+						.calc-item__radio
+							input(type="radio" id="one1" name="radio-2")
+							label(for="one1") Один
+							input(type="radio" id="two1" name="radio-2")
+							label(for="two1") Два
+					.calc-item.calc-item--white
+						.calc-item__label Длинный, правда длинный текст
+						input.calc-item__textbox.calc-item__textbox--white(size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Текст
+						input.calc-item__textbox.calc-item__textbox--white(size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Чекбоксы:
+						.calc-item__checkboxes
+							input(type="checkbox" id="ch1")
+							label(for="ch1") Один
+							input(type="checkbox" id="ch2")
+							label(for="ch2") Два
+							input(type="checkbox" id="ch3")
+							label(for="ch3") Три
+					a(href="").calc-item__submit.button.button--black Расчитать
+
+			.hidden-xs.hidden-sm
+				.block.block--context-wide
+			a(href="").calculator__button.button.button--gray.button--full-width.button--mobile-only Подробнее о калькуляторе
+			.calculator__description
+				+lipsum(3, "paragraphs")
+		.visible-xs-block
+			.block.block--context
+	include elements/recommended.jade

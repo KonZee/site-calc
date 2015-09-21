@@ -1,0 +1,71 @@
+extends base
+
+include elements/lipsum.jade
+
+block title
+	title Посты
+
+block content
+	main
+		.container
+			.row
+				.col-sm-6.col-md-4.col-lg-3
+					a(href="").post-link
+						.post-link__image
+							picture
+								source(media="(min-width: 560px)" srcset="images/post-link__image.jpg")
+								source(srcset="images/post-link__image--mobile.jpg")
+								img(srcset="images/post-link__image.jpg" src="images/post-link__image.jpg")
+						h3.post-link__title
+							+lipsum(Math.floor(Math.random()*9 + 1), "words")
+						.post-link__text
+							+lipsum(2, "sentences")
+						.post-link__more Подробнее
+				.col-sm-6.col-md-4.col-lg-3
+					a(href="").post-link
+						.post-link__image
+							picture
+								source(media="(min-width: 560px)" srcset="images/post-link__image.jpg")
+								source(srcset="images/post-link__image--mobile.jpg")
+								img(srcset="images/post-link__image.jpg" src="images/post-link__image.jpg")
+						h3.post-link__title
+							+lipsum(Math.floor(Math.random()*9 + 1), "words")
+						.post-link__text
+							+lipsum(2, "sentences")
+						.post-link__more Подробнее
+				.col-sm-6.col-md-4.col-lg-3
+					a(href="").post-link
+						.post-link__image
+							picture
+								source(media="(min-width: 560px)" srcset="images/post-link__image.jpg")
+								source(srcset="images/post-link__image--mobile.jpg")
+								img(srcset="images/post-link__image.jpg" src="images/post-link__image.jpg")
+						h3.post-link__title
+							+lipsum(Math.floor(Math.random()*9 + 1), "words")
+						.post-link__text
+							+lipsum(2, "sentences")
+						.post-link__more Подробнее
+				.col-sm-6.col-md-4.col-lg-3
+					a(href="").post-link
+						.post-link__image
+							picture
+								source(media="(min-width: 560px)" srcset="images/post-link__image.jpg")
+								source(srcset="images/post-link__image--mobile.jpg")
+								img(srcset="images/post-link__image.jpg" src="images/post-link__image.jpg")
+						h3.post-link__title
+							+lipsum(Math.floor(Math.random()*9 + 1), "words")
+						.post-link__text
+							+lipsum(2, "sentences")
+						.post-link__more Подробнее
+				.col-sm-6.col-md-4.col-lg-3
+					a(href="").post-link
+						.post-link__image
+							picture
+								source(media="(min-width: 560px)" srcset="images/post-link__image.jpg")
+								source(srcset="images/post-link__image--mobile.jpg")
+								img(srcset="images/post-link__image.jpg" src="images/post-link__image.jpg")
+						h3.post-link__title
+							+lipsum(Math.floor(Math.random()*9 + 1), "words")
+						.post-link__text
+							+lipsum(2, "sentences")
+						.post-link__more Подробнее

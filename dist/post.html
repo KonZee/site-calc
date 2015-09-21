@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <title>Пост - калькуляторы</title>
+    <link href="css/bootstrap.css?undefined" rel="stylesheet">
+    <link href="css/main.css?undefined" rel="stylesheet">
+    <!--link(href='css/cs-select.css?' + timestamp rel='stylesheet')-->
+    <!--link(href='css/cs-skin-border.css?' + timestamp rel='stylesheet')-->
+    <link href="http://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <header class="header header--bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 col-md-8"><a href="" class="logo"><span class="logo--yellow">Строительные</span><span>&nbsp;</span><span class="logo--white">калькуляторы</span></a></div>
+          <div class="col-xs-2 col-md-4">
+            <div class="header__button header__button--black-white">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M50.5,3.153c-6.534,0-11.837,5.304-11.837,11.837 c0,6.534,5.303,11.837,11.837,11.837c6.531,0,11.837-5.298,11.837-11.837S57.042,3.153,50.5,3.153z M50.5,38.663 c-6.534,0-11.837,5.297-11.837,11.837v35.508c0,6.532,5.303,11.837,11.837,11.837c6.531,0,11.837-5.305,11.837-11.837V50.501 C62.337,43.967,57.042,38.663,50.5,38.663z"/>
+              </svg>
+              
+            </div>
+            <div class="header__text header__text--white">Et exercitation ex, exercitation id sunt in dolore sed dolore eu sint. Consequat eiusmod, cillum mollit non non, lorem dolor ut lorem, ut. 
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <main></main>
+          <div class="post">
+            <div class="post__image"><img src="images/post__image.jpg"></div>
+            <h1 class="post__title">Labore irure pariatur consequat cillum 
+            </h1>
+            <div class="post__text">
+              <p>Sint ipsum in consectetur sint qui nulla? In incididunt dolore aliquip deserunt laborum, ullamco ad velit. Do, anim fugiat consequat dolor id magna. Et dolore irure, ut in sed incididunt deserunt, adipiscing? Et, in sunt voluptate qui fugiat? 
+              </p>
+              <p>Dolore, ut aliqua laborum lorem eu, consequat ea aliquip veniam, sed. Sit aute et eiusmod anim lorem, enim fugiat ex. In occaecat dolore occaecat lorem et excepteur, aliqua mollit, sunt cupidatat? Tempor culpa incididunt proident, esse, reprehenderit duis. 
+              </p>
+              <p>Sint sit pariatur elit lorem elit consequat sit adipiscing in, amet, cillum? Et, consectetur, minim ea excepteur mollit. Dolor, in proident proident ipsum voluptate aliqua in? Incididunt, quis culpa, deserunt aliquip fugiat qui cillum mollit. Aute ipsum ipsum, laborum mollit deserunt sed ad id in id. Reprehenderit officia elit proident in, aliqua in dolor, veniam cupidatat non et. Et anim ex, sit, dolor voluptate sint et officia lorem proident quis. Et velit, ad tempor laboris qui. 
+              </p>
+            </div>
+          </div>
+          <div class="recommended">
+            <h2 class="recommended__title">Рекомендуемые калькуляторы</h2>
+            <div class="row">
+              <div class="col-sm-6 col-md-4 col-lg-4"><a href="" style="background-image: url('images/calc-link.jpg');" class="block block--calc-link">
+                  <div class="text text-center">Расчет размера дверей</div></a></div>
+              <div class="col-sm-6 col-md-4 col-lg-4"><a href="" style="background-image: url('images/calc-link.jpg');" class="block block--calc-link">
+                  <div class="text text-center">Расчет размера дверей</div></a></div>
+              <div class="col-sm-6 col-md-4 col-lg-4"><a href="" style="background-image: url('images/calc-link.jpg');" class="block block--calc-link">
+                  <div class="text text-center">Расчет размера дверей</div></a></div>
+            </div><a href="" class="recommended__show-all button button--gray button--full-width button--desktop-reset">Перейти ко всем</a>
+          </div>
+        </div>
+        <div class="col-lg-3 visible-lg-block">
+          <aside>
+            <div class="block block--context"></div>
+            <div class="block block--context"></div>
+            <div class="block block--context"></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container breadcrumbs"><a href="" class="breadcrumbs__mobile-back"><</a><a href="" class="breadcrumbs__link">&copy; Строительные калькуляторы</a><a href="" class="breadcrumbs__link">Level 2</a><a href="" class="breadcrumbs__link">Level 3</a><span class="breadcumbs__current">Текущая страница</span></div>
+    </footer>
+    <!--.overlay-->
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+  <script src="js/classie.js"></script>
+  <script src="js/selectFx.js"></script>
+  <script>
+    (function() {
+    	[].slice.call( document.querySelectorAll( 'select.calc-item__select' ) ).forEach( function(el) {
+    		new SelectFx(el);
+    	} );
+    })();
+  </script>
+  <script src="js/main.js"></script>
+</html>

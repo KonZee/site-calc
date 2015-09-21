@@ -1,0 +1,17 @@
+extends innerpages
+
+include elements/lipsum.jade
+
+block title
+	title Пост - калькуляторы
+
+block main
+	main
+	.post
+		.post__image
+			img(src="images/post__image.jpg")
+		h1.post__title
+			+lipsum(Math.floor(Math.random()*9 + 1), "words")
+		.post__text
+			+lipsum(3, "paragraphs")
+	include elements/recommended.jade

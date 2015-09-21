@@ -1,0 +1,74 @@
+footer
+	z-index 1
+	position fixed
+	left 0
+	right 0
+	bottom 0
+	background rgba(27,27,27, 0.95)
+
+.breadcrumbs
+	position relative
+	height 60px
+
+.breadcrumbs__mobile-back
+	display block
+	position absolute
+	left 10px
+	top 10px
+	font-size 30px
+	color #797979
+	&:hover
+		text-decoration none
+		color $yellow
+	@media screen and (min-width: $screen-sm)
+		display none
+
+.breadcrumbs__link
+	display none
+	color #fff
+	font-size 14px
+	height inherit
+	padding 20px 5px
+	border-right 1px #444 solid
+	position relative
+	@media screen and (min-width: $screen-sm)
+		display inline-block
+	@media screen and (min-width: $screen-md)
+		padding 20px 30px
+	&:hover
+		color $yellow
+		text-decoration none
+	&:after
+		display block
+		position absolute
+		content ""
+		height 0
+		background $yellow
+		bottom 0
+		transition height 150ms linear
+		left 5px
+		right 5px
+		@media screen and (min-width: $screen-md)
+			left 30px
+			right 30px
+	&:hover
+		&:after
+			height 3px
+	&:nth-child(2)
+		padding-left 0
+		&:after
+			left 0
+
+.breadcumbs__current
+	height inherit
+	padding 20px 0 0 0
+	color #fff
+	border-bottom 3px solid $yellow
+	cursor default
+	display table
+	margin 0 auto
+	@media screen and (min-width: $screen-sm)
+		display inline-block
+		margin 0 0 0 5px
+	@media screen and (min-width: $screen-md)
+		margin 0 0 0 30px

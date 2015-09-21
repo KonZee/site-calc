@@ -4,7 +4,34 @@ html(lang='en')
 	include elements/head
 
 	body
-	
+
+		header.header.header--bg
+			.container
+				.row
+					.col-xs-10.col-md-8
+						a(href="").logo
+							span.logo--yellow Строительные
+							span &nbsp;
+							span.logo--white калькуляторы
+					.col-xs-2.col-md-4
+						.header__button.header__button--black-white.
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M50.5,3.153c-6.534,0-11.837,5.304-11.837,11.837 c0,6.534,5.303,11.837,11.837,11.837c6.531,0,11.837-5.298,11.837-11.837S57.042,3.153,50.5,3.153z M50.5,38.663 c-6.534,0-11.837,5.297-11.837,11.837v35.508c0,6.532,5.303,11.837,11.837,11.837c6.531,0,11.837-5.305,11.837-11.837V50.501 C62.337,43.967,57.042,38.663,50.5,38.663z"/>
+							</svg>
+
+						.header__text.header__text--white
+							+lipsum(2, "sentences")
+
 		block content
-	
+
+		footer
+			.container.breadcrumbs
+				a(href="").breadcrumbs__mobile-back <
+				a(href="").breadcrumbs__link &copy; Строительные калькуляторы
+				a(href="").breadcrumbs__link Level 2
+				a(href="").breadcrumbs__link Level 3
+				span.breadcumbs__current Текущая страница
+
+		//.overlay
+
 	include elements/scripts

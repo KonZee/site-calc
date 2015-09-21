@@ -1,1 +1,10 @@
-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js ') 
+script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js ')
+script(src='js/classie.js')
+script(src='js/selectFx.js')
+script.
+	(function() {
+		[].slice.call( document.querySelectorAll( 'select.calc-item__select' ) ).forEach( function(el) {
+			new SelectFx(el);
+		} );
+	})();
+script(src='js/main.js')

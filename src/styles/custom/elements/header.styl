@@ -1,0 +1,69 @@
+header
+	height 60px
+	@media screen and (min-width: $screen-md)
+		height 80px
+	overflow-y hidden
+.header--bg
+	background url("../images/header-bg.jpg")
+
+.logo
+	display inline-block
+	padding-top 9px
+	font-size 16px
+	line-height 1.3
+	width 70%
+	@media screen and (min-width: $screen-sm)
+		padding-top 13px
+		font-size 20px
+		width auto
+	@media screen and (min-width: $screen-md)
+		font-size 30px
+	@media screen and (min-width: $screen-lg)
+		font-size 33px
+	span
+		display inline-block
+.logo--yellow
+	color $yellow
+.logo--white
+	color #fff
+
+.header__button
+	display block
+	width 30px
+	height 30px
+	border-radius 50%
+	padding 5px 0
+	text-align center
+	cursor pointer
+	position absolute
+	right 10px
+	top 17px
+	@media screen and (min-width: $screen-md)
+		display none
+.header__button--black-white
+	background rgba(0,0,0,0.47)
+	fill #fff
+	svg
+		height 13px
+
+.header__text
+	display none
+	font-size 14px
+	position fixed
+	top 60px
+	left 0
+	right 0
+	z-index 1
+	font-style italic
+	background #fff
+	padding 10px
+	@media screen and (min-width: $screen-md)
+		position static
+		display block
+		width auto
+		background none
+		padding none
+.header__text--white
+	@media screen and (min-width: $screen-md)
+		color #fff
+		opacity 0.37

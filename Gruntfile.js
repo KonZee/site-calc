@@ -78,7 +78,7 @@ module.exports = function (grunt){
 				files: [{
 					expand: true,
 					cwd: 'src/templates',
-					src: ['**/*.jade', '!base.jade', '!elements/*.jade'],
+					src: ['**/*.jade', '!base.jade', '!innerpages.jade','!elements/*.jade'],
 					dest: 'dist',
 					filter: 'isFile',
 					ext: '.html'
@@ -124,6 +124,24 @@ module.exports = function (grunt){
 					cwd: 'src/fonts',
 					src: ['**/*'],
 					dest: 'dist/css/fonts',
+					filter: 'isFile'
+				}]
+			},
+			svg: {
+				files: [{
+					expand: true,
+					cwd: 'src/images',
+					src: ['**/*.svg'],
+					dest: 'dist/images',
+					filter: 'isFile'
+				}]
+			},
+			css: {
+				files: [{
+					expand: true,
+					cwd: 'src/css',
+					src: ['**/*.css'],
+					dest: 'dist/css',
 					filter: 'isFile'
 				}]
 			},
@@ -219,6 +237,14 @@ module.exports = function (grunt){
 			images: {
 				files: ['src/images/**/*'],
 				tasks: ['newer:imagemin']
+			},
+			svg: {
+				files: ['src/images/**/*.svg'],
+				tasks: ['newer:copy:svg']
+			},
+			css: {
+				files: ['src/css/**/*.css'],
+				tasks: ['newer:copy:css']
 			},
 
 		}
