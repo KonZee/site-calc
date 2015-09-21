@@ -127,10 +127,18 @@
 // Context media
 .block--context
 	background $yellow // Temp line
+	position relative
+	&:after // Temp line
+		display block
+		position absolute
+		content "Context ad block"
+		left 50%
+		top 50%
+		transform translate(-50%, -50%)
 
 .block--context-wide
+	@extend .block--context
 	display table
 	margin 0 auto 11px
-	background $yellow // Temp line
 	width 750px
 	height 100px

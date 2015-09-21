@@ -126,6 +126,7 @@
 	&__select
 		cursor pointer
 		width 100%
+		min-width 320px
 		position relative
 		//top -5px
 		padding-right 30px
@@ -148,8 +149,12 @@
 			padding 11px 19px
 
 	&__select-options
+		min-width 320px
 		overflow-y hidden
-		position relative
+		position absolute
+		top calc(100% - 6px)
+		right 30px
+		left 0
 		z-index 1
 		background #fff
 		display none
