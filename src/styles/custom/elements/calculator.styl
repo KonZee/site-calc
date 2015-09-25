@@ -48,13 +48,22 @@
 	&--white
 		background #fff
 		color #8e8e8e
+	&--black
+		background #000
+		color #fff
 	&--small
 		@media screen and (min-width: $screen-md)
-			flex 1 0 25%
-
+			//flex 1 0 25%
 	&--medium
 		@media screen and (min-width: $screen-md)
-			flex 1 0 40%
+			flex 1 0 48%
+	&--button
+		padding 0
+	&--result
+		display none
+		flex 1 0 100%
+		@media screen and (min-width: $screen-sm)
+			height auto
 
 	&__label
 		flex 1 0 100%
@@ -66,6 +75,7 @@
 	&__textbox
 		border-width 0 0 1px 0
 		flex 1 0 auto
+		text-align center
 		@media screen and (min-width: $screen-sm)
 			margin-left 15px
 		&:focus
@@ -77,6 +87,8 @@
 				border-color $yellow
 		&--numbers
 			flex 1 0 auto
+		&.invalid
+			border-color red
 
 	&__radio,
 	&__checkboxes
@@ -187,9 +199,28 @@
 
 
 	&__submit
-		margin 5px
 		height 40px
 		flex 0 0 auto
+
+	&__result-title
+		display block
+		font-size 1.7em
+		padding 0.5em 0
+		width 100%
+	&__result-text
+		display inline-block
+		vertical-align top
+		font-size 1.25em
+		padding 9px 0
+	&__result
+		display inline-block
+		vertical-align top
+		background #fff
+		padding 11px 8px
+		border-radius 4px
+		font-w
+		&:empty
+			display none
 
 select::-ms-expand
 	display none

@@ -1,0 +1,41 @@
+extends innerpages
+
+include elements/lipsum.jade
+
+block main
+	main
+		.calculator
+			.calculator__container
+				.calculator__title Расчет состава бетона
+				form.calculator__body
+					.calc-item.calc-item--white
+						.calc-item__label Необходимый объем бетона
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="size" size="3")
+					.calc-item.calc-item--white
+						.calc-item__select-container
+							select.calc-item__select.calc-item__select--white(name="quality")
+								option(value="" disabled selected).disabled Выберите марку бетона:
+								option(value="М-100") М-100
+								option(value="М-150") М-150
+								option(value="М-200") М-200
+								option(value="М-250") М-250
+								option(value="М-300") М-300
+
+					.calc-item.calc-item--button.js-calc-calc
+						a(href="").calc-item__submit.button.button--black Расчитать
+					.calc-item.calc-item--result.js-result-wrapper
+						.calc-item__result-title Результат
+						.calc-item__result-text Требуемое количество обоев:&nbsp;
+						.calc-item__result.js-result
+
+			.hidden-xs.hidden-sm
+				.block.block--context-wide
+			a(href="").calculator__button.button.button--gray.button--full-width.button--mobile-only Подробнее о калькуляторе
+			.calculator__description
+				+lipsum(3, "paragraphs")
+		.visible-xs-block
+			.block.block--context
+	include elements/recommended.jade
+
+	block append scripts
+		script(src='js/calc-concrete.js')

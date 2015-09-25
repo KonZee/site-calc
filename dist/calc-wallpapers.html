@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <title>Пост - калькуляторы</title>
+    <title>Калькуляторы</title>
     <link href="css/bootstrap.css?undefined" rel="stylesheet">
     <link href="css/main.css?undefined" rel="stylesheet">
     <!--link(href='css/cs-select.css?' + timestamp rel='stylesheet')-->
@@ -23,7 +23,7 @@
               </svg>
               
             </div>
-            <div class="header__text header__text--white">Dolore consectetur non, sit, in do in laborum. In ullamco, non mollit duis aute et. 
+            <div class="header__text header__text--white">Sunt, magna laboris non dolor enim aliquip, esse dolore eu fugiat? Ullamco irure duis occaecat pariatur et veniam, minim, ex. 
             </div>
           </div>
         </div>
@@ -32,20 +32,109 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
-          <main></main>
-          <div class="post">
-            <div class="post__image"><img src="images/post__image.jpg"></div>
-            <h1 class="post__title">Nostrud pariatur ullamco in id ut occaecat 
-            </h1>
-            <div class="post__text">
-              <p>Eu, laboris minim labore duis cupidatat. Adipiscing consequat sit veniam fugiat occaecat cupidatat cupidatat, tempor, consectetur deserunt. Amet adipiscing velit veniam sint sint, non ullamco nostrud, non nisi. 
-              </p>
-              <p>Reprehenderit nisi eiusmod, sint. Ipsum consectetur adipiscing in voluptate mollit velit reprehenderit excepteur sint cillum. Labore sint qui ad? 
-              </p>
-              <p>Qui cupidatat labore, ut nulla ea sed dolor in. Elit irure ut irure incididunt adipiscing, ea dolore dolor incididunt velit. Elit, sunt officia quis, pariatur excepteur est magna esse. Adipiscing, laboris in ut lorem incididunt. Non aute sunt enim labore laboris, eu, dolor deserunt, ut adipiscing ipsum. Labore nostrud officia, tempor, aliqua. Ut, non, duis minim laborum est anim duis nisi? 
-              </p>
+          <main>
+            <div class="calculator">
+              <div class="calculator__container">
+                <div class="calculator__title">Расчет обоев</div>
+                <form class="calculator__body">
+                  <div class="calc-item calc-item--white calc-item--small">
+                    <div class="calc-item__label">Длина помещения, м</div>
+                    <input name="length" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white calc-item-small">
+                    <div class="calc-item__label">Ширина помещения, м</div>
+                    <input name="width" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Высота помещения, м</div>
+                    <input name="height" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Длина рулона, м</div>
+                    <input name="rolllength" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Ширина рулона, м</div>
+                    <input name="rollwidth" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Количество дверей</div>
+                    <input name="doors" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Высота двери 1</div>
+                    <input name="door-height-1" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Ширина двери 1</div>
+                    <input name="door-width-1" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Высота двери 2</div>
+                    <input name="door-height-2" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Ширина двери 2</div>
+                    <input name="door-width-2" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div id="doors-placeholder"></div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Количество окон</div>
+                    <input name="windows" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Высота окна 1</div>
+                    <input name="window-height-1" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white">
+                    <div class="calc-item__label">Ширина окна 1</div>
+                    <input name="window-width-1" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div id="windows-placeholder"></div>
+                  <template id="door">
+                    <div class="calc-item calc-item--white height">
+                      <div class="calc-item__label">Высота двери</div>
+                      <input name="door-height-" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                    </div>
+                    <div class="calc-item calc-item--white width">
+                      <div class="calc-item__label">Ширина двери</div>
+                      <input name="door-width" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                    </div>
+                  </template>
+                  <template id="window">
+                    <div class="calc-item calc-item--white height">
+                      <div class="calc-item__label">Высота окна</div>
+                      <input name="window-height" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                    </div>
+                    <div class="calc-item calc-item--white width">
+                      <div class="calc-item__label">Ширина окна</div>
+                      <input name="window-width" size="1" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                    </div>
+                  </template>
+                  <div class="calc-item calc-item--button js-calc-calc"><a href="" class="calc-item__submit button button--black">Расчитать</a></div>
+                  <div class="calc-item calc-item--result js-result-wrapper">
+                    <div class="calc-item__result-title">Результат</div>
+                    <div class="calc-item__result-text">Требуемое количество обоев:&nbsp;</div>
+                    <div class="calc-item__result js-result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="hidden-xs hidden-sm">
+                <div class="block block--context-wide"></div>
+              </div><a href="" class="calculator__button button button--gray button--full-width button--mobile-only">Подробнее о калькуляторе</a>
+              <div class="calculator__description">
+                <p>Ad veniam, duis officia aliquip, quis, sunt mollit. Duis id anim sunt pariatur nulla dolor fugiat consectetur nulla consequat ex enim? Excepteur, tempor eiusmod aliquip sint consequat commodo incididunt, officia exercitation. Fugiat dolor aliquip aliquip deserunt enim, proident quis incididunt cillum in. Incididunt cupidatat velit duis ex pariatur minim proident, exercitation et, in ut? 
+                </p>
+                <p>Officia ea enim dolor proident exercitation laboris dolor labore minim mollit labore. Duis dolor tempor deserunt, non, minim fugiat reprehenderit, magna deserunt? Tempor do in mollit anim dolor labore incididunt velit commodo dolore, duis pariatur? Et voluptate consequat tempor ex, dolore eu commodo esse, eiusmod? 
+                </p>
+                <p>Nisi pariatur, duis ullamco excepteur sed sint aliqua. Anim veniam, ullamco sit, ex, elit. Ex velit aliqua exercitation cupidatat ea cillum exercitation. Cupidatat, esse esse reprehenderit sit, velit, mollit labore, dolor. 
+                </p>
+              </div>
             </div>
-          </div>
+            <div class="visible-xs-block">
+              <div class="block block--context"></div>
+            </div>
+          </main>
           <div class="recommended">
             <h2 class="recommended__title">Рекомендуемые калькуляторы</h2>
             <div class="row">
@@ -90,29 +179,30 @@
                   </div></a></div>
             </div><a href="" class="recommended__show-all button button--gray button--full-width button--desktop-reset">Перейти ко всем</a>
           </div>
+          <script src="js/calc-wallpapers.js"></script>
         </div>
         <div class="col-lg-3 visible-lg-block">
           <aside>
             <div class="block block--blog-posts"><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Aute sunt cillum in incididunt 
+                  <div class="block-blog__title">Veniam exercitation dolore ea 
                   </div>
-                  <div class="block-blog__lead">Duis quis incididunt quis, consectetur, id, laborum dolore laborum. 
-                  </div>
-                </div></a><a href="" class="block-blog clearfix">
-                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
-                <div class="block-blog__text">
-                  <div class="block-blog__title">Nostrud sint ullamco qui in 
-                  </div>
-                  <div class="block-blog__lead">Cupidatat in exercitation, sit, est excepteur ut deserunt dolor ipsum. 
+                  <div class="block-blog__lead">Dolore nisi, esse labore dolore est. 
                   </div>
                 </div></a><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Tempor veniam proident cillum eu 
+                  <div class="block-blog__title">Irure in sint veniam 
                   </div>
-                  <div class="block-blog__lead">Excepteur, lorem et quis ut ullamco in amet. 
+                  <div class="block-blog__lead">Cillum proident nulla nulla, irure qui sint, et proident irure. 
+                  </div>
+                </div></a><a href="" class="block-blog clearfix">
+                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
+                <div class="block-blog__text">
+                  <div class="block-blog__title">Nulla commodo adipiscing aliquip 
+                  </div>
+                  <div class="block-blog__lead">Excepteur in adipiscing ut proident consequat, eiusmod laboris sit occaecat enim. 
                   </div>
                 </div></a>
               <div class="block__blog-all"><a href="">Все статьи</a></div>
@@ -122,23 +212,23 @@
             <div class="block block--blog-posts"><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Cupidatat lorem 
+                  <div class="block-blog__title">Dolor sed 
                   </div>
-                  <div class="block-blog__lead">In elit mollit irure cupidatat. 
-                  </div>
-                </div></a><a href="" class="block-blog clearfix">
-                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
-                <div class="block-blog__text">
-                  <div class="block-blog__title">Consectetur pariatur 
-                  </div>
-                  <div class="block-blog__lead">In sit ullamco, voluptate, duis eiusmod dolore qui reprehenderit irure et. 
+                  <div class="block-blog__lead">Culpa anim, laboris, do, tempor sit sit? 
                   </div>
                 </div></a><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">In sint 
+                  <div class="block-blog__title">Ex in 
                   </div>
-                  <div class="block-blog__lead">Ea enim voluptate occaecat adipiscing, do ut, eiusmod proident ut sunt, laborum quis. 
+                  <div class="block-blog__lead">Sed non deserunt labore sunt labore, ut, dolor, ad in. 
+                  </div>
+                </div></a><a href="" class="block-blog clearfix">
+                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
+                <div class="block-blog__text">
+                  <div class="block-blog__title">Commodo adipiscing incididunt 
+                  </div>
+                  <div class="block-blog__lead">Dolor incididunt est cupidatat dolor nostrud excepteur elit sunt, cupidatat, ad consectetur. 
                   </div>
                 </div></a>
               <div class="block__blog-all"><a href="">Все статьи</a></div>
@@ -163,4 +253,5 @@
     })();
   </script>
   <script src="js/main.js"></script>
+  <script src="js/calc-wallpapers.js"></script>
 </html>

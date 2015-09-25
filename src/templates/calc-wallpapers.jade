@@ -1,0 +1,88 @@
+extends innerpages
+
+include elements/lipsum.jade
+
+block main
+	main
+		.calculator
+			.calculator__container
+				.calculator__title Расчет обоев
+				form.calculator__body
+					.calc-item.calc-item--white.calc-item--small
+						.calc-item__label Длина помещения, м
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="length" size="2")
+					.calc-item.calc-item--white.calc-item-small
+						.calc-item__label Ширина помещения, м
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="width" size="2")
+					.calc-item.calc-item--white
+						.calc-item__label Высота помещения, м
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="height" size="2")
+					.calc-item.calc-item--white
+						.calc-item__label Длина рулона, м
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="rolllength" size="2")
+					.calc-item.calc-item--white
+						.calc-item__label Ширина рулона, м
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="rollwidth" size="2")
+
+
+					.calc-item.calc-item--white
+						.calc-item__label Количество дверей
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="doors" size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Высота двери 1
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="door-height-1" size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Ширина двери 1
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="door-width-1" size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Высота двери 2
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="door-height-2" size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Ширина двери 2
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="door-width-2" size="1")
+					#doors-placeholder
+
+					.calc-item.calc-item--white
+						.calc-item__label Количество окон
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="windows" size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Высота окна 1
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="window-height-1" size="1")
+					.calc-item.calc-item--white
+						.calc-item__label Ширина окна 1
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="window-width-1" size="1")
+					#windows-placeholder
+
+					template#door
+						.calc-item.calc-item--white.height
+							.calc-item__label Высота двери
+							input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="door-height-" size="1")
+						.calc-item.calc-item--white.width
+							.calc-item__label Ширина двери
+							input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="door-width" size="1")
+					template#window
+						.calc-item.calc-item--white.height
+							.calc-item__label Высота окна
+							input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="window-height" size="1")
+						.calc-item.calc-item--white.width
+							.calc-item__label Ширина окна
+							input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="window-width" size="1")
+
+					.calc-item.calc-item--button.js-calc-calc
+						a(href="").calc-item__submit.button.button--black Расчитать
+					.calc-item.calc-item--result.js-result-wrapper
+						.calc-item__result-title Результат
+						.calc-item__result-text Требуемое количество обоев:&nbsp;
+						.calc-item__result.js-result
+
+			.hidden-xs.hidden-sm
+				.block.block--context-wide
+			a(href="").calculator__button.button.button--gray.button--full-width.button--mobile-only Подробнее о калькуляторе
+			.calculator__description
+				+lipsum(3, "paragraphs")
+		.visible-xs-block
+			.block.block--context
+	include elements/recommended.jade
+
+	block append scripts
+		script(src='js/calc-wallpapers.js')

@@ -47,7 +47,8 @@ aside {
 	color: #FFFFFF;
 }
 
-.button--black:hover {
+.button--black:hover,
+.button--black:focus {
 	color: #FFFFFF;
 }
 
@@ -380,6 +381,23 @@ header {
 	color: #8E8E8E;
 }
 
+.calc-item--black {
+	background: #000000;
+	color: #FFFFFF;
+}
+
+.calc-item--button {
+	padding: 0;
+}
+
+.calc-item--result {
+	display: none;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 100%;
+	    -ms-flex: 1 0 100%;
+	        flex: 1 0 100%;
+}
+
 .calc-item__label {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1 0 100%;
@@ -394,6 +412,7 @@ header {
 	-webkit-flex: 1 0 auto;
 	    -ms-flex: 1 0 auto;
 	        flex: 1 0 auto;
+	text-align: center;
 }
 
 .calc-item__textbox:focus {
@@ -414,6 +433,10 @@ header {
 	-webkit-flex: 1 0 auto;
 	    -ms-flex: 1 0 auto;
 	        flex: 1 0 auto;
+}
+
+.calc-item__textbox.invalid {
+	border-color: #FF0000;
 }
 
 .calc-item__radio,
@@ -551,12 +574,38 @@ header {
 }
 
 .calc-item__submit {
-	margin: 5px;
 	height: 40px;
 	-webkit-box-flex: 0;
 	-webkit-flex: 0 0 auto;
 	    -ms-flex: 0 0 auto;
 	        flex: 0 0 auto;
+}
+
+.calc-item__result-title {
+	display: block;
+	font-size: 1.7em;
+	padding: 0.5em 0;
+	width: 100%;
+}
+
+.calc-item__result-text {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1.25em;
+	padding: 9px 0;
+}
+
+.calc-item__result {
+	display: inline-block;
+	vertical-align: top;
+	background: #FFFFFF;
+	padding: 11px 8px;
+	border-radius: 4px;
+}
+
+.calc-item__result font-w,
+.calc-item__result:empty {
+	display: none;
 }
 
 select::-ms-expand {
@@ -799,6 +848,10 @@ footer {
 		        flex-wrap: nowrap;
 	}
 
+	.calc-item--result {
+		height: auto;
+	}
+
 	.calc-item__label {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 auto;
@@ -950,18 +1003,11 @@ footer {
 		opacity: 0.37;
 	}
 
-	.calc-item--small {
-		-webkit-box-flex: 1;
-		-webkit-flex: 1 0 25%;
-		    -ms-flex: 1 0 25%;
-		        flex: 1 0 25%;
-	}
-
 	.calc-item--medium {
 		-webkit-box-flex: 1;
-		-webkit-flex: 1 0 40%;
-		    -ms-flex: 1 0 40%;
-		        flex: 1 0 40%;
+		-webkit-flex: 1 0 48%;
+		    -ms-flex: 1 0 48%;
+		        flex: 1 0 48%;
 	}
 
 	.recommended__title {

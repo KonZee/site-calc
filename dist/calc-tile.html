@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <title>Пост - калькуляторы</title>
+    <title>Калькуляторы</title>
     <link href="css/bootstrap.css?undefined" rel="stylesheet">
     <link href="css/main.css?undefined" rel="stylesheet">
     <!--link(href='css/cs-select.css?' + timestamp rel='stylesheet')-->
@@ -23,7 +23,7 @@
               </svg>
               
             </div>
-            <div class="header__text header__text--white">Dolore consectetur non, sit, in do in laborum. In ullamco, non mollit duis aute et. 
+            <div class="header__text header__text--white">Ut non cupidatat, lorem esse deserunt, amet duis anim consequat commodo ea exercitation est, ut. Labore ullamco enim sunt dolore ut aliquip non, elit in eu. 
             </div>
           </div>
         </div>
@@ -32,20 +32,51 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
-          <main></main>
-          <div class="post">
-            <div class="post__image"><img src="images/post__image.jpg"></div>
-            <h1 class="post__title">Nostrud pariatur ullamco in id ut occaecat 
-            </h1>
-            <div class="post__text">
-              <p>Eu, laboris minim labore duis cupidatat. Adipiscing consequat sit veniam fugiat occaecat cupidatat cupidatat, tempor, consectetur deserunt. Amet adipiscing velit veniam sint sint, non ullamco nostrud, non nisi. 
-              </p>
-              <p>Reprehenderit nisi eiusmod, sint. Ipsum consectetur adipiscing in voluptate mollit velit reprehenderit excepteur sint cillum. Labore sint qui ad? 
-              </p>
-              <p>Qui cupidatat labore, ut nulla ea sed dolor in. Elit irure ut irure incididunt adipiscing, ea dolore dolor incididunt velit. Elit, sunt officia quis, pariatur excepteur est magna esse. Adipiscing, laboris in ut lorem incididunt. Non aute sunt enim labore laboris, eu, dolor deserunt, ut adipiscing ipsum. Labore nostrud officia, tempor, aliqua. Ut, non, duis minim laborum est anim duis nisi? 
-              </p>
+          <main>
+            <div class="calculator">
+              <div class="calculator__container">
+                <div class="calculator__title">Расчет расхода плитки</div>
+                <form class="calculator__body">
+                  <div class="calc-item calc-item--white calc-item--medium">
+                    <div class="calc-item__label">Высота/длина, см</div>
+                    <input name="length" size="3" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white calc-item--medium">
+                    <div class="calc-item__label">Ширина, см</div>
+                    <input name="width" size="3" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white calc-item--medium">
+                    <div class="calc-item__label">Высота плитки, см</div>
+                    <input name="tilelength" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--white calc-item--medium">
+                    <div class="calc-item__label">Ширина плитки, см</div>
+                    <input name="tilewidth" size="2" class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers">
+                  </div>
+                  <div class="calc-item calc-item--button js-calc-calc"><a href="" class="calc-item__submit button button--black">Расчитать</a></div>
+                  <div class="calc-item calc-item--result js-result-wrapper">
+                    <div class="calc-item__result-title">Результат</div>
+                    <div class="calc-item__result-text">Требуемое количество обоев:&nbsp;</div>
+                    <div class="calc-item__result js-result"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="hidden-xs hidden-sm">
+                <div class="block block--context-wide"></div>
+              </div><a href="" class="calculator__button button button--gray button--full-width button--mobile-only">Подробнее о калькуляторе</a>
+              <div class="calculator__description">
+                <p>Proident cillum occaecat dolor labore sint, aliqua, ut eu. Ad ut, eiusmod tempor adipiscing. 
+                </p>
+                <p>Aliqua, irure, ad exercitation in dolore cillum ea id ex dolore officia. Sed fugiat cillum proident aliqua mollit dolor in in dolore magna. Id id, veniam adipiscing. 
+                </p>
+                <p>Et, mollit proident ullamco qui in, laboris esse dolore, amet veniam aliqua eiusmod labore dolor? Sunt mollit aliqua excepteur ut, ex ut. 
+                </p>
+              </div>
             </div>
-          </div>
+            <div class="visible-xs-block">
+              <div class="block block--context"></div>
+            </div>
+          </main>
           <div class="recommended">
             <h2 class="recommended__title">Рекомендуемые калькуляторы</h2>
             <div class="row">
@@ -90,29 +121,30 @@
                   </div></a></div>
             </div><a href="" class="recommended__show-all button button--gray button--full-width button--desktop-reset">Перейти ко всем</a>
           </div>
+          <script src="js/calc-tile.js"></script>
         </div>
         <div class="col-lg-3 visible-lg-block">
           <aside>
             <div class="block block--blog-posts"><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Aute sunt cillum in incididunt 
+                  <div class="block-blog__title">Dolore ex nulla consequat 
                   </div>
-                  <div class="block-blog__lead">Duis quis incididunt quis, consectetur, id, laborum dolore laborum. 
-                  </div>
-                </div></a><a href="" class="block-blog clearfix">
-                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
-                <div class="block-blog__text">
-                  <div class="block-blog__title">Nostrud sint ullamco qui in 
-                  </div>
-                  <div class="block-blog__lead">Cupidatat in exercitation, sit, est excepteur ut deserunt dolor ipsum. 
+                  <div class="block-blog__lead">Sunt exercitation consequat, dolore labore nostrud cupidatat, ex cillum. 
                   </div>
                 </div></a><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Tempor veniam proident cillum eu 
+                  <div class="block-blog__title">Ipsum dolore 
                   </div>
-                  <div class="block-blog__lead">Excepteur, lorem et quis ut ullamco in amet. 
+                  <div class="block-blog__lead">Veniam dolore magna, ullamco in nulla nostrud commodo amet. 
+                  </div>
+                </div></a><a href="" class="block-blog clearfix">
+                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
+                <div class="block-blog__text">
+                  <div class="block-blog__title">Duis sit reprehenderit qui dolor 
+                  </div>
+                  <div class="block-blog__lead">Proident nostrud dolore sint do deserunt. 
                   </div>
                 </div></a>
               <div class="block__blog-all"><a href="">Все статьи</a></div>
@@ -122,23 +154,23 @@
             <div class="block block--blog-posts"><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Cupidatat lorem 
+                  <div class="block-blog__title">Ut proident et laboris tempor 
                   </div>
-                  <div class="block-blog__lead">In elit mollit irure cupidatat. 
-                  </div>
-                </div></a><a href="" class="block-blog clearfix">
-                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
-                <div class="block-blog__text">
-                  <div class="block-blog__title">Consectetur pariatur 
-                  </div>
-                  <div class="block-blog__lead">In sit ullamco, voluptate, duis eiusmod dolore qui reprehenderit irure et. 
+                  <div class="block-blog__lead">Aliquip, nulla lorem ut pariatur laborum velit enim sint lorem nulla esse, occaecat. 
                   </div>
                 </div></a><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">In sint 
+                  <div class="block-blog__title">Deserunt enim 
                   </div>
-                  <div class="block-blog__lead">Ea enim voluptate occaecat adipiscing, do ut, eiusmod proident ut sunt, laborum quis. 
+                  <div class="block-blog__lead">Sit est. 
+                  </div>
+                </div></a><a href="" class="block-blog clearfix">
+                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
+                <div class="block-blog__text">
+                  <div class="block-blog__title">Labore in sit sit 
+                  </div>
+                  <div class="block-blog__lead">Ea minim ea sed dolor aliqua ea laboris. 
                   </div>
                 </div></a>
               <div class="block__blog-all"><a href="">Все статьи</a></div>
@@ -163,4 +195,5 @@
     })();
   </script>
   <script src="js/main.js"></script>
+  <script src="js/calc-tile.js"></script>
 </html>

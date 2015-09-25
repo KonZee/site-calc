@@ -15,7 +15,7 @@ $(document).ready(function(){
 		$(this).find('.calc-item__select-options').slideToggle();
 	});
 
-	selectsSize();
+	//selectsSize();
 
 });
 

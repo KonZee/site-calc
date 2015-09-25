@@ -1,0 +1,40 @@
+extends innerpages
+
+include elements/lipsum.jade
+
+block main
+	main
+		.calculator
+			.calculator__container
+				.calculator__title Расчет расхода плитки
+				form.calculator__body
+					.calc-item.calc-item--white.calc-item--medium
+						.calc-item__label Высота/длина, см
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="length" size="3")
+					.calc-item.calc-item--white.calc-item--medium
+						.calc-item__label Ширина, см
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="width" size="3")
+					.calc-item.calc-item--white.calc-item--medium
+						.calc-item__label Высота плитки, см
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="tilelength" size="2")
+					.calc-item.calc-item--white.calc-item--medium
+						.calc-item__label Ширина плитки, см
+						input.calc-item__textbox.calc-item__textbox--white.calc-item__textbox--numbers(name="tilewidth" size="2")
+					.calc-item.calc-item--button.js-calc-calc
+						a(href="").calc-item__submit.button.button--black Расчитать
+					.calc-item.calc-item--result.js-result-wrapper
+						.calc-item__result-title Результат
+						.calc-item__result-text Требуемое количество обоев:&nbsp;
+						.calc-item__result.js-result
+
+			.hidden-xs.hidden-sm
+				.block.block--context-wide
+			a(href="").calculator__button.button.button--gray.button--full-width.button--mobile-only Подробнее о калькуляторе
+			.calculator__description
+				+lipsum(3, "paragraphs")
+		.visible-xs-block
+			.block.block--context
+	include elements/recommended.jade
+
+	block append scripts
+		script(src='js/calc-tile.js')
