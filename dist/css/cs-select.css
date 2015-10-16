@@ -4,16 +4,16 @@ div.cs-select {
 	vertical-align: middle;
 	position: relative;
 	text-align: left;
-	background: #FFFFFF;
+	background: #fff;
 	z-index: 100;
 	width: 100%;
 	max-width: 500px;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	 -khtml-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 div.cs-select:focus {
@@ -45,9 +45,7 @@ div.cs-select:focus {
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
-	     -o-transform: translateY(-50%);
-	        transform: translateY(-50%);
+	transform: translateY(-50%);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -64,9 +62,7 @@ div.cs-select:focus {
 
 .cs-select.cs-active > span::after {
 	-webkit-transform: translateY(-50%) rotate(180deg);
-	    -ms-transform: translateY(-50%) rotate(180deg);
-	     -o-transform: translateY(-50%) rotate(180deg);
-	        transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
 }
 
 div.cs-active {
@@ -78,7 +74,7 @@ div.cs-active {
 	position: absolute;
 	overflow: hidden;
 	width: 100%;
-	background: #FFFFFF;
+	background: #fff;
 	visibility: hidden;
 }
 
@@ -98,7 +94,7 @@ div.cs-active {
 }
 
 .cs-select ul li.cs-focus span {
-	background-color: #DDDDDD;
+	background-color: #ddd;
 }
 
 /* Optgroup and optgroup label */
@@ -108,4 +104,4 @@ div.cs-active {
 
 .cs-select li.cs-optgroup > span {
 	cursor: default;
-}
+}
