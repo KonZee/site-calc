@@ -23,10 +23,13 @@ $(document).ready(function(){
 			result = "Заполните все обязательные поля формы"
 		}
 		else{
-			var area = (parseInt(values.length) + parseInt(values.width)) * 2 * values.height;
+			// Total room area
+			var area = (parseFloat(values.length) + parseFloat(values.width)) * 2 * values.height;
+			// Single roll area
+			var rollArea = values.rollwidth * values.rolllength;
+			// Get doors and windows area
 			var doorsArea = 0;
 			var windowsArea = 0;
-			// Get doors area
 			$('[name^="door-height"]').each(function(){
 				var doorHeight = $(this).val();
 				var doorWidth = $(this).parent().next().children('[name^="door-width"]').val();
@@ -37,14 +40,13 @@ $(document).ready(function(){
 				var windowWidth = $(this).parent().next().children('[name^="window-width"]').val();
 				windowsArea += windowHeight * windowWidth;
 			});
-			area -= (doorsArea - windowsArea);
+			// Area without windows and doors
+			area -= (doorsArea + windowsArea);
 			if (area <= 0){
 				result = "Площадь дверей и окон больше площади стен, введите корректные размеры"
 			}
 			else{
-				result = (parseInt(values.length) + parseInt(values.width)) * 2;
-				result = result / values.rollwidth;
-				result = result / (values.rolllength / values.height);
+				result = Math.ceil(area / rollArea);
 				result = result + " " + plural(result, "рулон", "рулона", "рулонов");
 			}
 		}
@@ -59,9 +61,10 @@ $(document).ready(function(){
 		else{
 			doors.removeClass('invalid');
 			// remove elements
+			console.log("doors.val() ", doors.val());
+			console.log($("[name^='door-height-']").length);
 			if(parseInt(doors.val()) < $("[name^='door-height-']").length){
 				for(var i=$("[name^='door-height-']").length - 1; i >= parseInt(doors.val()); i--){
-				//for(var i=parseInt(doors.val()); i< $("[name^='door-height-']").length; i++){
 					var parent = $("[name^='door-height-']").eq(i).parent();
 					parent.next().remove();
 					parent.remove();
@@ -83,11 +86,23 @@ $(document).ready(function(){
 					}
 				}
 				else{
-					console.log("no template")
+					for(var i = lastIndex + 1; i <= parseInt(doors.val()); i++){
+						var element = 	'<div class="calc-item calc-item--white height">'
+							+ '<div class="calc-item__label">Высота двери '+ i +'</div>'
+							+ '<input class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers" size="1" name="door-height-'+i+'">'
+							+ '</div>'
+							+ '<div class="calc-item calc-item--white width">'
+							+ '<div class="calc-item__label">Ширина двери '+ i +'</div>'
+							+ '<input class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers" size="1" name="door-width-'+i+'">'
+							+ '</div>';
+						$('#doors-placeholder').before(element);
+					}
 				}
 			}
 		}
 	});
+
+	// Add/remove fields for windows and doors
 	$('input[name="windows"]').focusout(function(){
 		var windows = $(this);
 		if (windows.val() === ""){
@@ -98,7 +113,6 @@ $(document).ready(function(){
 			// remove elements
 			if(parseInt(windows.val()) < $("[name^='window-height-']").length){
 				for(var i=$("[name^='window-height-']").length - 1; i >= parseInt(windows.val()); i--){
-				//for(var i=parseInt(windows.val()); i< $("[name^='window-height-']").length; i++){
 					var parent = $("[name^='window-height-']").eq(i).parent();
 					parent.next().remove();
 					parent.remove();
@@ -120,7 +134,17 @@ $(document).ready(function(){
 					}
 				}
 				else{
-					console.log("no template")
+					for(var i = lastIndex + 1; i <= parseInt(windows.val()); i++){
+						var element = 	'<div class="calc-item calc-item--white height">'
+							+ '<div class="calc-item__label">Высота окна '+ i +'</div>'
+							+ '<input class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers" size="1" name="window-height-'+i+'">'
+							+ '</div>'
+							+ '<div class="calc-item calc-item--white width">'
+							+ '<div class="calc-item__label">Ширина окна '+ i +'</div>'
+							+ '<input class="calc-item__textbox calc-item__textbox--white calc-item__textbox--numbers" size="1" name="window-width-'+i+'">'
+							+ '</div>';
+						$('#windows-placeholder').before(element);
+					}
 				}
 			}
 		}
