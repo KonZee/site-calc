@@ -3,9 +3,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		var size = $('.calculator__body :input[name="size"]');
 		var quality = $('.calculator__body :input[name="quality"]');
-		console.log(size.val());
-		console.log(quality.val());
-		console.log(typeof(quality.val()));
 		var result;
 		var cementFraction = 1;
 		var sandFraction;
@@ -37,36 +34,17 @@ $(document).ready(function(){
 					brockenRockFraction = 3.7;
 				break;
 			}
+			var vol = size.val().replace(',','.').replace(' ','')
+
 			var part = 1 / (cementFraction / 1.5  + sandFraction / 1.8 + brockenRockFraction / 1.4);
-			console.log(part);
-			var cement = Math.round(part * 1500 * cementFraction);
-			var sand = Math.round(part * 1800 * sandFraction);
-			var brockenRock = Math.round(part * 1400 * brockenRockFraction);
-			console.log(cement, sand, brockenRock)
+			var cement = Math.round(part * 1500 * cementFraction) * vol;
+			var sand = Math.round(part * 1800 * sandFraction) * vol;
+			var brockenRock = Math.round(part * 1400 * brockenRockFraction) * vol;
 			result = "На " + size.val() + " "+ plural(Math.floor(size.val()), "кубометр", "кубометра", "кубометров") + " бетона " + quality.val() +
 			" требуется " + cement + " кг цемента, " + sand + " кг песка, " + brockenRock + " кг щебня."
 
 		}
 
-//		var inputs = $('.calculator__body :input');
-//		var values = {};
-//		var valid = true;
-//		var result;
-//		inputs.removeClass('invalid');
-//		inputs.each(function(){
-//			if($(this).val() === ""){
-//				console.log(this.name)
-//				valid = false;
-//				$(this).addClass('invalid');
-//			}
-//			values[this.name] = $(this).val();
-//		});
-//		if (!valid){
-//			result = "Заполните все обязательные поля формы"
-//		}
-//		else{
-//
-//		}
 		$('.js-result').text(result)
 		$('.js-result-wrapper').slideDown();
 	});

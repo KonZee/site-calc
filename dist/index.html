@@ -4,12 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <title>Главная калькуляторы</title>
-    <link href="css/bootstrap.css?undefined" rel="stylesheet">
-    <link href="css/main.css?undefined" rel="stylesheet">
-    <!--link(href='css/cs-select.css?' + timestamp rel='stylesheet')-->
-    <!--link(href='css/cs-skin-border.css?' + timestamp rel='stylesheet')-->
-    <link href="http://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet" type="text/css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header class="header header--bg">
@@ -23,7 +17,7 @@
               </svg>
               
             </div>
-            <div class="header__text header__text--white">Mollit id occaecat, id laborum dolore et, incididunt deserunt voluptate irure ullamco elit, eu elit. Pariatur reprehenderit aute sit nisi proident. 
+            <div class="header__text header__text--white">Aliqua veniam, dolore ut, ex dolor deserunt commodo aliqua. Dolore deserunt dolore labore in ut, non, ea. 
             </div>
           </div>
         </div>
@@ -69,23 +63,23 @@
             <div class="block block--blog-posts"><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">Pariatur dolor labore dolore 
+                  <div class="block-blog__title">Sed ad elit 
                   </div>
-                  <div class="block-blog__lead">Id, sed, dolor incididunt laboris dolor veniam? 
-                  </div>
-                </div></a><a href="" class="block-blog clearfix">
-                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
-                <div class="block-blog__text">
-                  <div class="block-blog__title">Qui proident esse 
-                  </div>
-                  <div class="block-blog__lead">Irure commodo irure nisi, exercitation est, laboris, labore id reprehenderit qui. 
+                  <div class="block-blog__lead">Sit nisi, aliqua ea in, anim irure, deserunt occaecat velit officia laboris dolor. 
                   </div>
                 </div></a><a href="" class="block-blog clearfix">
                 <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
                 <div class="block-blog__text">
-                  <div class="block-blog__title">In in sunt occaecat est 
+                  <div class="block-blog__title">Laboris veniam magna in 
                   </div>
-                  <div class="block-blog__lead">Ullamco non amet in excepteur laboris, nulla, laboris voluptate sunt cupidatat. 
+                  <div class="block-blog__lead">Adipiscing lorem dolore officia non exercitation consectetur duis sunt laborum consequat. 
+                  </div>
+                </div></a><a href="" class="block-blog clearfix">
+                <div class="block-blog__image"><img src="images/blog-post-thumb.jpg"></div>
+                <div class="block-blog__text">
+                  <div class="block-blog__title">Laboris sint lorem 
+                  </div>
+                  <div class="block-blog__lead">Ut officia dolore adipiscing, et nisi magna ut, in labore ad ad in dolor. 
                   </div>
                 </div></a>
               <div class="block__blog-all"><a href="">Все статьи</a></div>
@@ -101,17 +95,20 @@
     <footer>
       <div class="container breadcrumbs"><a href="" class="breadcrumbs__mobile-back"><</a><a href="" class="breadcrumbs__link">&copy; Строительные калькуляторы</a><a href="" class="breadcrumbs__link">Level 2</a><a href="" class="breadcrumbs__link">Level 3</a><span class="breadcumbs__current">Текущая страница</span></div>
     </footer>
-    <!--.overlay-->
+    <link href="css/bootstrap.css?undefined" rel="stylesheet" type="text/css">
+    <link href="css/main.css?undefined" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+    <script src="js/classie.js"></script>
+    <script src="js/selectFx.js"></script>
+    <script>
+      (function() {
+      	[].slice.call( document.querySelectorAll( 'select.calc-item__select' ) ).forEach( function(el) {
+      		new SelectFx(el);
+      	} );
+      })();
+    </script>
+    <script src="js/main.js"></script>
   </body>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
-  <script src="js/classie.js"></script>
-  <script src="js/selectFx.js"></script>
-  <script>
-    (function() {
-    	[].slice.call( document.querySelectorAll( 'select.calc-item__select' ) ).forEach( function(el) {
-    		new SelectFx(el);
-    	} );
-    })();
-  </script>
-  <script src="js/main.js"></script>
 </html>

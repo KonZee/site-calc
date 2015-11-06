@@ -8,11 +8,10 @@ $(document).ready(function(){
 		inputs.removeClass('invalid');
 		inputs.each(function(){
 			if($(this).val() === ""){
-				console.log(this.name)
 				valid = false;
 				$(this).addClass('invalid');
 			}
-			values[this.name] = $(this).val();
+			values[this.name] = $(this).val().replace(',','.').replace(' ','');
 		});
 		if (!valid){
 			result = "Заполните все обязательные поля формы"

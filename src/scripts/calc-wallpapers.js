@@ -13,7 +13,7 @@ $(document).ready(function(){
 					$(this).addClass('invalid');
 				}
 			}
-			values[this.name] = $(this).val();
+			values[this.name] = $(this).val().toString().replace(',','.').replace(' ','');
 		});
 		var doors = $('input[name="doors"]').val();
 		if (doors === ""){doors = 0};
@@ -31,13 +31,13 @@ $(document).ready(function(){
 			var doorsArea = 0;
 			var windowsArea = 0;
 			$('[name^="door-height"]').each(function(){
-				var doorHeight = $(this).val();
-				var doorWidth = $(this).parent().next().children('[name^="door-width"]').val();
+				var doorHeight = $(this).val().replace(',','.').replace(' ','');
+				var doorWidth = $(this).parent().next().children('[name^="door-width"]').val().replace(',','.').replace(' ','');
 				doorsArea += doorHeight * doorWidth;
 			});
 			$('[name^="window-height"]').each(function(){
-				var windowHeight = $(this).val();
-				var windowWidth = $(this).parent().next().children('[name^="window-width"]').val();
+				var windowHeight = $(this).val().replace(',','.').replace(' ','');
+				var windowWidth = $(this).parent().next().children('[name^="window-width"]').val().replace(',','.').replace(' ','');
 				windowsArea += windowHeight * windowWidth;
 			});
 			// Area without windows and doors
@@ -60,9 +60,6 @@ $(document).ready(function(){
 		}
 		else{
 			doors.removeClass('invalid');
-			// remove elements
-			console.log("doors.val() ", doors.val());
-			console.log($("[name^='door-height-']").length);
 			if(parseInt(doors.val()) < $("[name^='door-height-']").length){
 				for(var i=$("[name^='door-height-']").length - 1; i >= parseInt(doors.val()); i--){
 					var parent = $("[name^='door-height-']").eq(i).parent();

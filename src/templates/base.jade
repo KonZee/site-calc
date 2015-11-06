@@ -32,7 +32,8 @@ html(lang='en')
 				a(href="").breadcrumbs__link Level 3
 				span.breadcumbs__current Текущая страница
 
-		//.overlay
+		block css
+			include elements/css
 
-	block scripts
-		include elements/scripts
+		block scripts
+			include elements/scripts
